@@ -1,0 +1,27 @@
+String driverClassName='sun.jdbc.odbc.JdbcOdbcDriver';
+String url='jdbc:odbc:XE';
+String userName='scott';
+String password='tiger';
+String query="insert into student values("firstName","lastName")";
+
+
+
+
+
+//for loading drivers
+Class.forName(driverClassName)
+
+//obtain a connection
+Connection con=DriverManager.connection(url,userName,password)
+
+//obtain a statement
+Statement st=con.createStatement();
+
+int count=st.executeUpdate(yourQuery);
+
+//Execute the query
+System.out.print('numbers of rows affected by this query='+count)
+
+
+//connection close
+con.close();
